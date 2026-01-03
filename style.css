@@ -1,27 +1,25 @@
 /* =========================
-   전체 화면 기본 설정
+   기본 리셋 & 페이지 구조
 ========================= */
 body {
   margin: 0;
   min-height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  background: #f4f6fa;
+  background: #f9f9f9;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #222;
 }
 
 /* =========================
-   카드 컨테이너
+   메인 컨테이너
 ========================= */
 .container {
   width: 100%;
-  max-width: 420px;
-  background: white;
+  max-width: 860px;
+  margin: 40px auto;
+  background: #ffffff;
   padding: 32px;
   border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.04);
 
   display: flex;
   flex-direction: column;
@@ -30,7 +28,7 @@ body {
 }
 
 /* =========================
-   텍스트
+   텍스트 영역
 ========================= */
 h1 {
   margin: 0;
@@ -65,7 +63,7 @@ h1 {
 .timer-layout {
   display: flex;
   justify-content: center;
-  margin-top: 48px;  
+  margin-top: 48px;
 }
 
 /* =========================
@@ -127,22 +125,22 @@ h1 {
 #timeText {
   position: absolute;
   inset: 0;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 42px;
   font-weight: bold;
   color: #1f3c88;
 }
 
-/* ⏱ 공부시간 라벨 */
+/* =========================
+   공부시간 선택 휠
+========================= */
 .minute-wheel-box {
   position: absolute;
-  top: -42px;   /* ⭐ 휠 전체 위치 */
+  top: -42px;
   left: -40px;
-  z-index: 11;
+  z-index: 10;
 
   display: flex;
   flex-direction: column;
@@ -155,57 +153,37 @@ h1 {
   color: #1f3c88;
   margin-bottom: 4px;
 }
-/* =========================
-   ⭕ 동그라미 좌상단 휠
-========================= */
+
 .minute-wheel-top {
   width: 64px;
   height: 50px;
-
   font-size: 13px;
   font-weight: 700;
   color: #1f3c88;
-
   text-align: center;
   border-radius: 12px;
   border: none;
-
   background: #e9eefc;
   padding: 4px;
-
   overflow-y: auto;
-  scroll-snap-type: y mandatory;
 }
 
 .minute-wheel-top option {
   padding: 6px 0;
-  scroll-snap-align: center;
-}
-
-
-/* =========================
-   원형 우하단 라벨
-========================= */
-.label-bottom-right {
-  position: absolute;
-  right: -6px;
-  bottom: -10px;
-
-  font-size: 12px;
-  font-weight: 700;
-  color: #1f3c88;
-  text-align: right;
-  line-height: 1.2;
 }
 
 /* =========================
-   하단 버튼 영역
+   버튼 영역
 ========================= */
 .buttons {
   width: 100%;
   display: flex;
   justify-content: center;
   gap: 12px;
+}
+
+.share-row {
+  margin-top: 8px;
 }
 
 button {
@@ -217,29 +195,59 @@ button {
   color: white;
   cursor: pointer;
 }
-.share-row {
-  margin-top: 8px;
-}
 
 button:hover {
   background: #162d66;
 }
 
 /* =========================
-   광고 영역
+   기록 리스트
 ========================= */
-.ad-box {
+#logList {
   width: 100%;
-  padding: 16px;
-  border: 1px dashed #ccc;
-  font-size: 13px;
-  color: #777;
-  text-align: center;
+  max-width: 520px;
+  margin: 24px auto 0;
+  padding: 0;
+  list-style: none;
 }
 
-/* ===== footer ===== */
+/* =========================
+   승인용 콘텐츠 영역
+========================= */
+.content-section {
+  width: 100%;
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 1px solid #eaeaea;
+  line-height: 1.8;
+}
 
+.content-section h2 {
+  margin-top: 40px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+}
+
+.content-section p {
+  margin-top: 14px;
+  font-size: 16px;
+  color: #444;
+  word-break: keep-all;
+}
+
+/* =========================
+   광고 여백 안정화
+========================= */
+.adsbygoogle {
+  margin: 32px 0;
+}
+
+/* =========================
+   푸터
+========================= */
 .site-footer {
+  width: 100%;
   margin-top: 80px;
   padding: 24px 0;
   border-top: 1px solid #e5e5e5;
